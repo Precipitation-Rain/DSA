@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a = 10;
+    int b = 20;
+
+    cout << (a+b) <<endl; //30
+    cout << (a-b) <<endl; //-10
+    cout << (a*b) <<endl; //200
+    cout << (a/b) <<endl; //0
+    cout << (a%b) <<endl; //10
+
+    cout << (a==b) <<endl; //0
+    cout << (a>b) <<endl; //0
+    cout << (a<b) <<endl; //1
+    cout << (a>=b) <<endl; //0
+    cout << (a<=b) <<endl; //1
+    cout << (a!=b) <<endl; //1
+    
+
+    cout << (a>b && a==b) <<endl; //0
+    cout << (a>b || a!=b) <<endl; //1
+    cout << !(a+b) <<endl;  //0
+
+}
