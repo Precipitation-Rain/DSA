@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    //type cating -> from one datatype to enother datatype.
+    //type cating -> from one datatype to another datatype.
     //ascii table
 
     int a = 'a';

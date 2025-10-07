@@ -1,0 +1,16 @@
+1] tell why we write 
+#include<iostrem>
+
+and 
+
+using namespace std;
+
+2]take any character as input
+
+if character in b/w a to z then print lowercase
+if character in b/w A to Z then print uppercase
+if character in b/w 1 to 9 then print digit
+
+3]Calculate sum of all even no's between 1 to n.
+4] celcius to farhenite.
+4]sum of nTh number using formula.

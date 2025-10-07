@@ -1,0 +1,3 @@
+We use #include<iostrem> to import or telling compiler that we are using/including iostream file.That file contains cout ka code.
+
+we use using namespace std to tell compiler that std wale namespace me se hi cout ka code lana!
