@@ -1,7 +1,7 @@
 /*
 continue is used to skip that particular itertaion 
 iteration = konsi bar loop me ghus rahe ho = uthe number ka iteration
-continue ke niche ka code unreachable hota hain
+continue ke niche ka code unreachable hota hain..uske niche kuch bhi ho unrechable hota hain , bhale vo uske bracket me nahi hain.
 */
 
 #include<iostream>
