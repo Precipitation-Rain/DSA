@@ -1,0 +1,4 @@
+1] find unique elemeny by using counting;
+2] find duplicate element using counting;
+3]triplet sum homework;
+4] sort 0 1 dry run 3 times
