@@ -3,6 +3,7 @@
 /*
 1.unique elements
 2.without size and without elemnts knowing
+
 */
 #include<iostream>
 using namespace std;

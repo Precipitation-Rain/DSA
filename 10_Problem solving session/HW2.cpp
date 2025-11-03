@@ -1,6 +1,7 @@
 //duplicates pairs
 /*
 1.return array(more than 1 element)
+
 */
 #include<iostream>
 using namespace std;
