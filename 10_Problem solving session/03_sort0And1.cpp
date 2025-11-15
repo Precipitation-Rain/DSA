@@ -8,6 +8,7 @@
 
 //3.Two pointer approach 
 
+/*
 #include<iostream>
 using namespace std;
 
@@ -49,5 +50,25 @@ int main(){
 
     sortZeroOne(arr , size);
     printarray(arr , size);
+
+}
+*/
+
+//2] using sort function
+
+
+
+#include<iostream>
+ #include <algorithm>
+using namespace std;
+int main(){
+    int arr[] = {1,0,0,0,1,1,0,1,1,0,0,1};
+    int size = 12;
+    
+    sort(arr,arr + size);
+
+    for(int i = 0; i < size ; i++){
+        cout<<arr[i]<<" ";
+    }
 
 }

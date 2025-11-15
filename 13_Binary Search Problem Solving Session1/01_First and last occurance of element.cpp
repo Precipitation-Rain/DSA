@@ -1,65 +1,71 @@
 #include<iostream>
 using namespace std;
 
-int firstoccurance(int arr[],int size , int key){
+int firstouccrance(int arr[] , int size , int target){
+
     int start = 0;
     int end = size - 1;
     int ans = -1;
-    int mid = (start + ((end - start)/2)) ;
+
+    int mid = start + (end - start)/2;
 
     while(start <= end){
-        if(key == arr[mid]){
+        if(arr[mid] == target){
             ans = mid;
             end = mid - 1;
         }
 
-        else if(key < arr[mid]){
-            end = mid - 1;
-        }
-
-        else if (key > arr[mid]){
+        else if (arr[mid] < target){
             start = mid + 1;
         }
 
-        mid = (start + ((end - start)/2)) ;
-     
+        else if (arr[mid] > target){
+            end = mid - 1;
+        }
+
+        mid = start + (end - start)/2;
     }
-   return ans;
+
+    return ans;
+
 }
 
-int lastoccurance(int arr[],int size , int key){
+int lastouccrance(int arr[] , int size , int target){
+
     int start = 0;
     int end = size - 1;
     int ans = -1;
-    int mid = (start + ((end - start)/2)) ;
+
+    int mid = start + (end - start)/2;
 
     while(start <= end){
-        if(key == arr[mid]){
+        if(arr[mid] == target){
             ans = mid;
             start = mid + 1;
         }
 
-        else if(key < arr[mid]){
-            end = mid - 1;
-        }
-
-        else if (key > arr[mid]){
+        else if (arr[mid] < target){
             start = mid + 1;
         }
 
-        mid = (start + ((end - start)/2)) ;
-     
-    }
-   return ans;
-}
+        else if (arr[mid] > target){
+            end = mid - 1;
+        }
 
+        mid = start + (end - start)/2;
+    }
+
+    return ans;
+
+}
 
 int main(){
-    int arr[7] = {2,3,3,4,7};
-    int size = 7;
-    int key = 3;
-    cout<<"First occurance of "<<key<<" is: "<<firstoccurance(arr,size,key)<<endl;
-    cout<<"Last occurance of "<<key<<" is: "<<lastoccurance(arr,size,key)<<endl;
+    int even[100] ={1,2,3,4,4,4,4,5};
+    int size =  8;
+    int target = 4;
+
+    cout<<"First occurrence of "<<target<<" is "<<firstouccrance(even , size , target)<<endl;
+    cout<<"Last occurrence of "<<target<<" is "<<lastouccrance(even , size , target);
 
 
 }
