@@ -1,52 +1,47 @@
 #include<iostream>
 using namespace std;
 
-int sqrt(int n){
-    int start = 0;
-    int end = n;
-    int ans = -1;
-    int mid = start + (end - start)/2;
+int mySqrt(int x) {
 
-    while(start <= end){
+    long long int s = 0;
+    long long int e = x;
+    long long int mid = s + (e - s)/2;
+    long long int ans = -1;
+    while(s <= e){
+        
+        long long int sqare = mid * mid;
 
-        if(mid * mid == n){
+        if(sqare == x){
             return mid;
         }
 
-        else if(mid * mid > n){
-            end = mid - 1;
-        }
-
-        else{
+        else if (sqare < x){
             ans = mid;
-            start = mid + 1;
+            s = mid + 1;
+        }
+        else{
+            e = mid - 1;
         }
 
-        mid = start + (end - start)/2;
-
+        mid = s + (e - s)/2;
+    }
+    return ans;
+        
     }
 
-    return ans ;
 
-}
-
-
-double morePrecision(int number ,int ans , int precision ){
-
+double moreprecision(int n , int precision , int tempSol){
     double factor = 1;
-    double tempSol = ans;
+    double ans = tempSol;
 
-    for(int i = 0 ; i < precision;i++){
-
-        factor = factor/10;
-
-        for(double j = tempSol ; j*j < number ; j = j + factor){
-            tempSol= j;
+    for(int i = 0 ; i < precision ; i++){
+        factor = factor / 10;
+        for(double j = ans ; j * j < n ; j+=factor){
+            ans = j;
         }
-
     }
 
-    return tempSol;
+    return ans;
 }
 
 
@@ -55,10 +50,10 @@ int main(){
     cout<<"Enter n: ";
     cin >>n;
 
-    int ans = sqrt(n);
+    int ans = mySqrt(n);
     // cout<<"Sqare root of "<<n<<" is "<< (ans) << endl;
 
-    double d = morePrecision(n, ans , 3);
+    double d = moreprecision(n,3,ans);
     cout<<"Sqare root of "<< n <<" is "<< d <<endl;
 
 
