@@ -1,0 +1,7 @@
+1] chech palindrome
+2]diff b/w char aaray and string => vo ek test case dekhna 
+3]reverse words in string
+4] cin.getline() read
+5] string ka documetation in cplusaplus.com
+6] string and char arary ke kuch functions read =>cplusaplus.com
+7] can we replace tab with string in place solution
