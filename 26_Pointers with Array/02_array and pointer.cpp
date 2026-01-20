@@ -49,17 +49,24 @@ int main()
     */
 
         // symbol table;
+
         int arr[10] = {2 ,45,65,412}; 
         int * ptr = arr;
 
-        // arr = *arr + 1; nahi ho sakta
+        // arr = *arr + 1; nahi ho sakta => symbol table not allowed to change
+        // pointer ho sakta hain!
         // cout<<arr;
 
         cout<< &ptr << endl;
         cout << ptr << endl;
-        ptr++;
+        // ptr++;
         cout << ptr << endl;
         cout<< &ptr << endl;
+
+        cout << ptr[3] << endl;
+        cout << arr[3] << endl;
+
+        cout << sizeof(ptr) << " " << sizeof(arr) << endl;
     
 
 
