@@ -54,7 +54,7 @@ int main(){
     // cout<<"Sqare root of "<<n<<" is "<< (ans) << endl;
 
     double d = moreprecision(n,3,ans);
-    cout<<"Sqare root of "<< n <<" is "<< d <<endl;
+    cout<<"Sqare root of "<< n <<" is "<< ans <<endl;
 
 
 }

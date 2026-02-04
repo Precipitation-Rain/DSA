@@ -10,6 +10,7 @@ bool binarySearch(int * arr , int start , int end , int element)
             return false;
 
         //preprocessing
+        
         int mid = start + (end - start) / 2;
 
         if(arr[mid] == element)

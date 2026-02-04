@@ -22,7 +22,9 @@ int searchingelement(int arr[] , int size , int key){
         else{
             end = mid - 1;
         }
+
         mid = start + (end - start)/2;
+        
     }
 
     return ans;

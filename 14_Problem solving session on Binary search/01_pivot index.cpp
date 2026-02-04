@@ -13,6 +13,7 @@ int pivotelement(int arr[] , int size){
             start = mid + 1;
         }
         else{
+            
             end = mid;
         }
 
@@ -24,8 +25,8 @@ int pivotelement(int arr[] , int size){
 }
 
 int main(){
-    int arr[10] = {2,4,5,6,1};
-    int size = 5;
+    int arr[10] = {4,5,6,1,2,3};
+    int size = 6;
     int pivot = pivotelement(arr,size);
     cout<<"Pivot elemnt is present at: "<<pivot<<endl;
 }
