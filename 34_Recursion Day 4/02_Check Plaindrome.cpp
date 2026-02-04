@@ -12,6 +12,7 @@ bool isPlindrome(string input , int left , int right)
 
         if(input[left] != input[right])
             return false;
+            
         else
             {
                 left++;

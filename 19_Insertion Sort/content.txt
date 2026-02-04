@@ -1,2 +1,2 @@
-Don't confuse with the 19insertion and 19 stl it is just index and lec not co occurace 
+Don't confuse with the 19insertion and 19stl , it is just index and lec not co occurace 
 follow 19_stl
