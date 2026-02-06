@@ -43,7 +43,7 @@ void reverse(string &str , int start )
         swap(str[start],str[str.length() - start - 1]);
         start++;
 
-       return reverse(str ,  start);
+        reverse(str ,  start);
 
     }
 
