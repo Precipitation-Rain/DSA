@@ -34,10 +34,19 @@ class Node{
 //Insertion
 
 /* Insert At Head */
-void insertAtHead(Node *  &head , int d)
+void insertAtHead(Node *  &head , int d , Node* &tail)
     {
 
         Node * temp = new Node(d);
+
+    // insertion while list is empty
+    if(head == NULL)   // 🔥 empty list
+    {
+        head = temp;
+        tail = temp;
+        return;
+    }
+        
         temp -> next = head;
         head = temp;
         
@@ -46,9 +55,18 @@ void insertAtHead(Node *  &head , int d)
 
 /* Insert At Tail */
 
-void insertAtTail( Node * &tail , int d)
+void insertAtTail( Node * &head , int d , Node* &tail)
     {
         Node * temp = new Node(d);
+
+    // 🔥 empty list case
+    if(tail == NULL)
+    {
+        tail = temp;
+        head = temp;
+        return;
+    }
+
         tail -> next = temp;
         tail = temp;
         
@@ -65,19 +83,27 @@ void insertAtPosition( Node * & head , int d , int position ,  Node * &tail)
 
         if(position == 1)
             {
-                insertAtHead(head , d);
+                insertAtHead(head , d,tail);
                 return;
             }
 
-        while(cnt < position-1)
+        while(cnt < position-1 && temp != NULL)
             {
                 temp = temp -> next;
                 cnt++;
             }
+        
+        // invalid position insertion
+        if(temp == NULL)
+        {
+            cout << "Invalid position" << endl;
+            return;
+        }
+
 
         if(temp -> next == NULL)
             {
-              insertAtTail(tail , d);  
+              insertAtTail(head , d , tail);  
               return;
             }
 
@@ -92,6 +118,11 @@ void insertAtPosition( Node * & head , int d , int position ,  Node * &tail)
 
 void print(Node * &head)
     {
+        if(head == NULL)
+            {
+                cout << "List is empty ";
+                return;
+            }
         Node * temp = head;
 
         while(temp  != NULL)
@@ -109,10 +140,23 @@ void print(Node * &head)
 void deleteNode(Node * &head , int position , Node *&tail)
     {
 
+        if(head == NULL)
+        {
+            cout << "List is empty, nothing to delete" << endl;
+            return;
+        }
+
     if(position == 1)
         {
             Node * temp = head;
             head = head -> next;
+
+            // important fix
+            if(head == NULL)   // list became empty
+            {
+                tail = NULL;
+            }
+
             temp -> next = NULL;
             delete temp;
         }
@@ -125,15 +169,27 @@ void deleteNode(Node * &head , int position , Node *&tail)
 
         int cnt = 1;
 
-        while(cnt < position)
+        while(cnt < position && temp != NULL)
             {
                 prev = temp;
                 temp = temp -> next; 
                 cnt++;
             }
+        
+        // handle invalid position deletion
+        if(temp == NULL) 
+        {
+            cout << "Invalid position" << endl;
+            return;
+        }
 
         prev -> next = temp -> next;
-        tail = prev;
+        
+        if(temp -> next == NULL)
+            {
+              tail = prev;  
+            }
+
         temp->next = NULL;
         delete temp;
 
@@ -146,56 +202,31 @@ void deleteNode(Node * &head , int position , Node *&tail)
 
 int main()
     {
+        Node * head = NULL;
+        Node * tail = NULL;
 
-        //create a node
-        Node * node1 = new Node(14);
-        Node * head = node1;
-        Node * tail = node1;
-        
+        insertAtHead(head, 10, tail);
         print(head);
         cout << endl;
 
-        insertAtHead(head , 13);
+        insertAtTail(head, 20, tail);
+        insertAtTail(head, 30, tail);
         print(head);
         cout << endl;
 
-        insertAtTail( tail , 15);
+        insertAtPosition(head, 25, 3, tail);
         print(head);
         cout << endl;
 
-        insertAtTail( tail , 16);
+        insertAtPosition(head, 5, 1, tail);
         print(head);
         cout << endl;
 
-        insertAtTail( tail , 17);
+        insertAtPosition(head, 40, 6, tail);
         print(head);
         cout << endl;
 
-        insertAtTail( tail , 18);
-        print(head);
-        cout << endl;
-
-        insertAtPosition(head,19 , 4 , tail);
-        print(head);
-        cout << endl;
-
-        insertAtPosition(head,12 , 1 , tail);
-        print(head);
-        cout << endl;
-
-        insertAtPosition(head,21 , 9 , tail);
-        print(head);
-        cout << endl;
-
-
-
-        deleteNode(head , 9 , tail);
-        print(head);
-        cout << endl;
-
-        cout << "Head : " << head -> data <<" ";
-        cout << "Tail : " << tail -> data;
-
-
+        cout << "Head : " << head -> data << "      ";
+        cout << "Tail : " << tail -> data ;
 
     }
