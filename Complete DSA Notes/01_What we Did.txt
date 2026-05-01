@@ -1,0 +1,17 @@
+1) basics of language
+2) searching
+3) sorting
+4) array and 2d array
+5) pointers
+6)string
+7)recursion
+8)linked list
+9)Linked list quetions
+10)stack
+11)stack quetions
+12)queue 
+13)queue quetions
+14)Tree
+++ hash + hasmaps + trie + algorithms
+15)graph
+16)DP

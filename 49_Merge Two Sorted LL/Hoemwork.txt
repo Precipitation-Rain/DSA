@@ -1,0 +1,2 @@
+1) sort 0 , 1 ,2 in array also
+2) merge two ll based on merge two sorted array logic
