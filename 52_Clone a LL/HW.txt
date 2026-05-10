@@ -1,0 +1,1 @@
+1) Implement the o(n*2) solution
