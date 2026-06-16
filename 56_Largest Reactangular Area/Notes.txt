@@ -1,0 +1,7 @@
+Next Smaller Element:
+- Brute force Approach => Implemet by yourself
+- Previous smaller Element
+
+
+Maximum reactangular Area:
+- brute force implementation
