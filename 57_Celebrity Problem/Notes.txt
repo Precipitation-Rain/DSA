@@ -1,0 +1,4 @@
+1) Celebrity Problem brute force
+
+HW:
+1) More approaches of the Celbrity Problem
